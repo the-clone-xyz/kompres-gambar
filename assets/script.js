@@ -25,19 +25,23 @@ document.getElementById("kompres-gambar").addEventListener("submit", (e) => {
   formData.append("kualitas", kualitas);
 
   axios
-    .post("https://api-yogisyahputra.42web.io/kompres-gambar", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      onUploadProgress: (progressEvent) => {
-        // Skala upload dari 10% sampai 80%
-        const percentUploaded = Math.round(
-          (progressEvent.loaded * 70) / progressEvent.total
-        ); // maks 70%
-        const totalPercent = 10 + percentUploaded; // dari 10% naik ke 80%
-        updateProgress(totalPercent, "Mengupload gambar...");
-      },
-    })
+    .post(
+      "https://api-yogisyahputra.42web.io/kompres-gambar/proses-data.php",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent) => {
+          // Skala upload dari 10% sampai 80%
+          const percentUploaded = Math.round(
+            (progressEvent.loaded * 70) / progressEvent.total
+          ); // maks 70%
+          const totalPercent = 10 + percentUploaded; // dari 10% naik ke 80%
+          updateProgress(totalPercent, "Mengupload gambar...");
+        },
+      }
+    )
     .then((res) => {
       // Update ke 90% karena server sedang memproses gambar
       updateProgress(90, "Memproses gambar...");
