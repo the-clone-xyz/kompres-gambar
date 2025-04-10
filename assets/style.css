@@ -1,0 +1,21 @@
+      body,
+      html {
+          height: 100%;
+      }
+
+      body {
+          background-image: url("bg.gif");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+      }
+
+      .center-wrapper {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      #progress-bar {
+          transition: width 0.4s ease;
+      }

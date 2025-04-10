@@ -1,0 +1,5 @@
+/images
+/vendor
+composer.json
+composer.lock
+proses-data.php
