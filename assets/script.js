@@ -25,7 +25,7 @@ document.getElementById("kompres-gambar").addEventListener("submit", (e) => {
   formData.append("kualitas", kualitas);
 
   axios
-    .post("proses-data.php", formData, {
+    .post("https://api-yogisyahputra.42web.io/kompres-gambar", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -109,6 +109,8 @@ document.getElementById("kompres-gambar").addEventListener("submit", (e) => {
       }, 500); // kasih delay supaya efek progress 90–100% terasa
     })
     .catch((err) => {
+      console.log(err);
+
       progressContainer.classList.add("d-none");
       Swal.fire({
         title: "Terjadi Kesalahan",
