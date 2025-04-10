@@ -7,7 +7,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 // Konfigurasi
 $uploadDir = __DIR__ . "/images/";
-$baseUrl = "https://api-yogisyahputra.42web.io/kompres-gambar/images/"; // Ganti sesuai domainmu
+$baseUrl = "http://localhost/kompres-images/images/"; // Ganti sesuai domainmu
 
 $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
